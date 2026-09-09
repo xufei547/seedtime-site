@@ -3,54 +3,355 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sundae — Support</title>
+<title>Sundae — A focus timer you can watch melt</title>
+<meta name="description" content="A focus timer for time blindness. Your session becomes an ice cream that visibly melts in real time. Try it right here in your browser, no install. iPhone app with Lock Screen Live Activity. One-time purchase, never a subscription.">
+<link rel="canonical" href="https://xufei547.github.io/seedtime-site/sundae/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sundae — A focus timer you can watch melt">
+<meta property="og:description" content="Numbers on a countdown mean nothing to a time-blind brain. So this timer is an ice cream that melts. Try it in your browser.">
+<meta property="og:url" content="https://xufei547.github.io/seedtime-site/sundae/">
+<meta property="og:image" content="https://xufei547.github.io/seedtime-site/sundae/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, "SF Pro Rounded", "Helvetica Neue", sans-serif;
-    max-width: 640px; margin: 0 auto; padding: 48px 24px 80px;
-    line-height: 1.7; color: #4a3b32; background: #fff7ea;
+  :root{
+    color-scheme: light dark;
+    --bg:#fff7ea; --ink:#4a3b32; --dim:#8b7768; --card:#fffdf8;
+    --accent:#f0a03c; --accentInk:#4a3b32; --line:#eadfcd;
   }
-  @media (prefers-color-scheme: dark) {
-    body { color: #f2e9df; background: #191512; }
-    .card { background: #272019 !important; }
-    a { color: #ffbe55 !important; }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#191512; --ink:#f2e9df; --dim:#a2948a; --card:#231d18; --line:#332a23; }
   }
-  h1 { font-size: 2rem; margin-bottom: 0.2em; }
-  h2 { font-size: 1.15rem; margin-top: 2em; }
-  .tagline { opacity: 0.65; margin-top: 0; }
-  .card { background: #ffffff; border-radius: 18px; padding: 20px 24px; margin: 24px 0; }
-  a { color: #d98324; text-decoration: none; }
-  footer { margin-top: 56px; font-size: 0.85rem; opacity: 0.6; }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Rounded","Segoe UI Variable","Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:40px 22px 90px}
+  h1{font-size:clamp(2rem,6vw,2.7rem);line-height:1.15;margin:0 0 .35em;letter-spacing:-.02em}
+  h2{font-size:1.35rem;margin:2.6em 0 .6em;letter-spacing:-.01em}
+  h3{font-size:1.02rem;margin:1.6em 0 .3em}
+  p{margin:.7em 0}
+  .lede{font-size:1.12rem;color:var(--dim);margin-top:0}
+  a{color:#d98324;text-decoration:none}
+  @media (prefers-color-scheme: dark){ a{color:#ffbe55} }
+  a:hover{text-decoration:underline}
+
+  /* ---------- the live timer ---------- */
+  .stage{
+    position:relative;background:var(--card);border:1px solid var(--line);
+    border-radius:26px;overflow:hidden;margin:0 0 4px;
+  }
+  #gl{display:block;width:100%;height:min(58vh,420px);touch-action:manipulation}
+  .readout{
+    text-align:center;margin:16px 0 0;
+    font-size:clamp(2.4rem,11vw,3.4rem);font-weight:700;letter-spacing:-.03em;
+    color:var(--ink);font-variant-numeric:tabular-nums;line-height:1;
+  }
+  .caption{
+    text-align:center;font-size:.92rem;color:var(--dim);margin:0 0 10px;min-height:1.4em;
+  }
+  .controls{display:flex;flex-direction:column;gap:12px;margin:14px 0 8px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  .chip{
+    border:0;background:rgba(140,120,100,.12);color:var(--ink);
+    font:inherit;font-size:.98rem;padding:9px 15px;border-radius:999px;cursor:pointer;
+    min-height:40px;
+  }
+  .chip[aria-pressed="true"]{background:var(--accent);color:#4a3b32;font-weight:600}
+  .go{
+    border:0;background:var(--accent);color:#4a3b32;font:inherit;font-weight:700;
+    font-size:1.08rem;padding:15px;border-radius:16px;cursor:pointer;width:100%;min-height:52px;
+  }
+  .ghost{
+    border:0;background:transparent;color:var(--dim);font:inherit;font-size:.95rem;
+    padding:10px;cursor:pointer;width:100%;
+  }
+  .storebtn{
+    display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--bg);
+    padding:13px 22px;border-radius:14px;font-weight:600;margin-top:8px;
+  }
+  .storebtn:hover{text-decoration:none;opacity:.9}
+  .note{font-size:.9rem;color:var(--dim)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin:22px 0}
+  ul{padding-left:1.1em}
+  li{margin:.45em 0}
+  footer{margin-top:60px;font-size:.85rem;color:var(--dim)}
+  .kicker{font-size:.82rem;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);margin-bottom:.4em}
 </style>
 </head>
 <body>
-<h1>🍨 Sundae</h1>
-<p class="tagline">Time you can see. A friend who never judges.</p>
+<div class="wrap">
 
-<div class="card">
-  <h2 style="margin-top:0">Contact</h2>
-  <p>Questions, ideas, or something not working?<br>
-  Email <a href="mailto:xufei547@gmail.com">xufei547@gmail.com</a> — I read everything.</p>
+  <p class="kicker">Sundae for iPhone</p>
+  <h1>Time you can watch.</h1>
+  <p class="lede">Numbers on a countdown mean nothing to a time-blind brain. So here the timer is an ice cream that melts. This one below is real. Start it and look away.</p>
+
+  <p class="caption" id="cap" style="margin-top:26px">A 25-minute session, sped up</p>
+  <div class="stage">
+    <canvas id="gl" aria-label="An ice cream that melts as time passes"></canvas>
+  </div>
+  <div class="readout" id="clock">25:00</div>
+
+  <div class="controls">
+    <div class="chips" id="chips" role="group" aria-label="Session length"></div>
+    <button class="go" id="go">Start · 25 min</button>
+    <button class="ghost" id="stop" hidden>Step away</button>
+  </div>
+  <p class="note" style="text-align:center">Runs in this tab. Nothing is uploaded, nothing is stored.</p>
+
+  <h2>Step away and it just naps</h2>
+  <p>Most timers punish you. A broken streak, a withered plant, a red number. Sundae has none of that. Pause it, close it, forget it. Nothing withers and nothing is lost. Streaks only ever celebrate, and if you miss a day the app says nothing at all.</p>
+
+  <h2>Rest counts too</h2>
+  <p>Lounge Mode is an official do-nothing timer. A sun sets over the sea while you lie flat, and finishing a rest keeps your streak alive. It is the only productivity feature I know of that rewards you for stopping.</p>
+
+  <h2>On the Lock Screen, where you can feel it</h2>
+  <p>In the iPhone app the melting scene lives in a Live Activity, so the phone can sit face-up on the desk and you still sense time passing without unlocking anything. There are twelve scenes across three worlds: a candle burning down, a night train riding home, a snail crawling toward a strawberry, and more.</p>
+
+  <h2>Pebble</h2>
+  <p>A sea otter keeps you company through the whole session, naps when you nap, and floats in the melted sundae when you finish. He does not have opinions about your productivity.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Get it on iPhone</h3>
+    <p class="note" style="margin-top:.2em">Free tier is a full timer with three scenes. One-time $9.99 unlocks everything. Never a subscription. Works fully offline, no account, no tracking, no data collected.</p>
+    <a class="storebtn" href="https://apps.apple.com/app/id6803122400">🍨 Download on the App Store</a>
+  </div>
+
+  <h2>Why time blindness needs a different timer</h2>
+  <p>Time blindness is a common ADHD experience: time does not register as something passing, so a countdown showing 18:42 is just a fact you read, not a thing you feel. A melting object works differently. You do not have to read it. You glance, you see it is half gone, and your body understands. That is the whole idea, and it is why the melt is rendered live rather than played back as a video.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Contact</h3>
+    <p>Questions, ideas, or something not working?<br>
+    Email <a href="mailto:xufei547@gmail.com">xufei547@gmail.com</a> — I read everything.</p>
+  </div>
+
+  <h2>FAQ</h2>
+
+  <h3>I stepped away and my session froze — is it lost?</h3>
+  <p>No. Stepping away just naps the session. Nothing withers, nothing is lost. Wake it up anytime and the timer continues where it left off.</p>
+
+  <h3>Does the timer keep going on the Lock Screen?</h3>
+  <p>Yes. Sundae uses Live Activities. Your scene and countdown stay visible on the Lock Screen and in the Dynamic Island. Allow Live Activities when the app asks.</p>
+
+  <h3>What does Sundae Full include?</h3>
+  <p>Every scene, Lounge Mode, and the full collection. One $9.99 purchase, yours forever. Never a subscription. Use "Restore purchase" in Settings after reinstalling or switching phones.</p>
+
+  <h3>Where is my data?</h3>
+  <p>On your device, and only there. Sundae works completely offline, with no account, no tracking and no servers. See the <a href="privacy.html">privacy policy</a>.</p>
+
+  <h3>The ambience stopped when I locked my phone.</h3>
+  <p>Background audio should keep playing. If it stops, check that Silent Mode is not on and that no other app took over audio playback.</p>
+
+  <h3>Is the timer on this page the same as the app?</h3>
+  <p>It is the same melt, ported to run in your browser. The app adds the Lock Screen Live Activity, eleven more scenes, ambient sound, Lounge Mode, the collection, and Pebble.</p>
+
+  <footer>© 2026 Fei Xu · <a href="privacy.html">Privacy Policy</a> · Made by one person, offline, with no trackers.</footer>
 </div>
 
-<h2>FAQ</h2>
+<script>
+(function(){
+  var canvas = document.getElementById('gl');
+  var clockEl = document.getElementById('clock');
+  var capEl = document.getElementById('cap');
+  var goEl = document.getElementById('go');
+  var stopEl = document.getElementById('stop');
+  var chipsEl = document.getElementById('chips');
 
-<p><strong>I stepped away and my session froze — is it lost?</strong><br>
-No. Stepping away just naps the session. Nothing withers, nothing is lost. Wake it up anytime and the timer continues where it left off.</p>
+  var DURATIONS = [10,15,25,45,60,90];
+  var minutes = 25;
+  var mode = 'demo';         // demo | running | napping | done
+  var startedAt = 0, elapsedBefore = 0;
 
-<p><strong>Does the timer keep going on the Lock Screen?</strong><br>
-Yes — Sundae uses Live Activities. Your scene and countdown stay visible on the Lock Screen and in the Dynamic Island. Allow Live Activities when the app asks.</p>
+  DURATIONS.forEach(function(m){
+    var b = document.createElement('button');
+    b.className='chip'; b.type='button'; b.textContent=m;
+    b.setAttribute('aria-pressed', m===minutes ? 'true':'false');
+    b.addEventListener('click', function(){
+      minutes = m;
+      [].forEach.call(chipsEl.children,function(c){c.setAttribute('aria-pressed', c===b?'true':'false');});
+      if(mode!=='running'){ reset(); }
+      goEl.textContent = 'Start · '+m+' min';
+    });
+    chipsEl.appendChild(b);
+  });
 
-<p><strong>What does Sundae Full include?</strong><br>
-Every scene, Lounge Mode, and the full collection — one $9.99 purchase, yours forever. Never a subscription. Use "Restore purchase" in Settings after reinstalling or switching phones.</p>
+  var vert = '#version 300 es\nin vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+  var frag = [
+'#version 300 es',
+'precision highp float;',
+'uniform vec2 uSize; uniform float uT;',
+'out vec4 outColor;',
+'float smin(float a,float b,float k){float h=clamp(0.5+0.5*(b-a)/k,0.0,1.0);return mix(b,a,h)-k*h*(1.0-h);}',
+'float sdEllipse(vec2 p,vec2 r){float k=length(p/r);return (k-1.0)*min(r.x,r.y);}',
+'float sdTri(vec2 p,vec2 q){p.x=abs(p.x);vec2 a=p-q*clamp(dot(p,q)/dot(q,q),0.0,1.0);',
+'  vec2 b=p-q*vec2(clamp(p.x/q.x,0.0,1.0),1.0);float s=-sign(q.y);',
+'  vec2 d=min(vec2(dot(a,a),s*(p.x*q.y-p.y*q.x)),vec2(dot(b,b),s*(p.y-q.y)));',
+'  return -sqrt(d.x)*sign(d.y);}',
+'float sdVSeg(vec2 p,float x,float yLo,float yHi,float r){vec2 d=vec2(p.x-x,p.y-clamp(p.y,yLo,yHi));return length(d)-r;}',
+'void main(){',
+'  vec2 size=uSize;',
+'  vec2 pos=vec2(gl_FragCoord.x, size.y-gl_FragCoord.y);',
+'  float s=min(size.x,size.y);',
+'  vec2 p=vec2((pos.x-0.5*size.x)/s,(0.47*size.y-pos.y)/s);',
+'  float aa=1.6/s;',
+'  float t=uT;',
+'  float m=smoothstep(0.0,1.0,t);',
+'  float g=clamp(pos.y/size.y,0.0,1.0);',
+'  vec3 col=mix(vec3(1.00,0.965,0.915),vec3(1.00,0.885,0.795),g);',
+'  col+=vec3(0.05,0.03,0.0)*smoothstep(0.9,0.0,length(p-vec2(-0.28,0.55)));',
+'  vec2 sc=vec2(0.0,0.175-0.50*m);',
+'  float r=0.255*(1.0-0.72*m);',
+'  vec2 pe=p-sc;',
+'  vec2 peSquash=vec2(pe.x/(1.0+0.55*m),pe.y/(1.0-0.30*m));',
+'  float dScoop=(length(peSquash)-r)*min(1.0+0.55*m,1.0-0.30*m+1.0)*0.5;',
+'  dScoop-=0.018*m*sin(11.0*p.x+2.2)*smoothstep(0.02,-0.14,pe.y);',
+'  float coneTop=0.085; float apexY=-0.335; float halfW=0.175;',
+'  vec2 pc=vec2(p.x,coneTop-p.y);',
+'  float dCone=sdTri(pc,vec2(halfW,coneTop-apexY));',
+'  float baseY=-0.352;',
+'  float dPud=sdEllipse(vec2(p.x,p.y-baseY),vec2(0.055+0.40*m,0.028+0.040*m));',
+'  float dDrip=1e3;',
+'  float xs[3]=float[3](-0.125,0.02,0.145);',
+'  float ph[3]=float[3](0.0,0.22,0.42);',
+'  for(int i=0;i<3;i++){',
+'    float ti=smoothstep(0.06+ph[i],0.62+ph[i],t);',
+'    if(ti<=0.001) continue;',
+'    float top=sc.y-r*0.25;',
+'    float len=ti*(top-baseY+0.02);',
+'    float rr=0.028*(1.0-0.30*ti)*(0.85+0.30*fract(sin(float(i)*7.13)*43758.5));',
+'    dDrip=min(dDrip,sdVSeg(p,xs[i],top-len,top,rr));',
+'  }',
+'  float dLiquid=smin(dPud,dDrip,0.045);',
+'  float dPink=smin(dLiquid,dScoop,0.035);',
+'  float sh=sdEllipse(vec2(p.x,p.y-(baseY-0.03)),vec2(0.30+0.14*m,0.045));',
+'  col=mix(col,col*0.86,smoothstep(0.07,-0.02,sh)*0.65);',
+'  vec3 coneCol=vec3(0.910,0.665,0.372);',
+'  vec2 w=vec2(p.x+(p.y-coneTop)*0.75,p.x-(p.y-coneTop)*0.75);',
+'  float grid=min(abs(fract(w.x*9.0)-0.5),abs(fract(w.y*9.0)-0.5));',
+'  coneCol*=mix(0.76,1.0,smoothstep(0.05,0.16,grid));',
+'  coneCol*=1.0-0.20*smoothstep(-0.02,0.16,p.x);',
+'  coneCol=mix(coneCol,coneCol*0.72,smoothstep(-0.012,0.0,dCone));',
+'  col=mix(col,coneCol,smoothstep(aa,-aa,dCone));',
+'  vec3 pink=vec3(0.995,0.62,0.715);',
+'  vec2 lp=pe-r*vec2(-0.34,0.46);',
+'  float lightR=smoothstep(r*1.35,0.0,length(lp));',
+'  vec3 body=mix(pink*0.865,vec3(1.0,0.80,0.855),lightR);',
+'  body=mix(body,pink*0.70,smoothstep(-0.014,0.0,dPink)*0.85);',
+'  col=mix(col,body,smoothstep(aa,-aa,dPink));',
+'  float hl=sdEllipse(pe-r*vec2(-0.34,0.44),vec2(r*0.30,r*0.155));',
+'  float inScoop=smoothstep(aa,-aa,dScoop);',
+'  float faceFade=1.0-smoothstep(0.72,0.92,m);',
+'  col=mix(col,vec3(1.0,0.94,0.955),smoothstep(aa,-aa,hl)*0.9*inScoop*faceFade);',
+'  float eyeH=r*0.105*(1.0-0.62*m);',
+'  float eyeR=r*0.052;',
+'  vec3 dark=vec3(0.30,0.16,0.17);',
+'  for(int e=0;e<2;e++){',
+'    float ex=(e==0?-1.0:1.0)*r*0.40;',
+'    float dEye=sdVSeg(pe,ex,-eyeH,eyeH,eyeR);',
+'    col=mix(col,dark,smoothstep(aa,-aa,dEye)*inScoop*faceFade);',
+'  }',
+'  vec2 pm=pe-vec2(0.0,-r*0.10);',
+'  float dMouth=abs(length(pm)-r*0.13)-r*0.020;',
+'  float mouthMask=smoothstep(0.0,-0.02,pm.y)*smoothstep(r*0.10,r*0.05,abs(pm.x));',
+'  col=mix(col,dark,smoothstep(aa,-aa,dMouth)*mouthMask*inScoop*faceFade);',
+'  for(int b2=0;b2<2;b2++){',
+'    float bx=(b2==0?-1.0:1.0)*r*0.62;',
+'    float dBlush=length(pe-vec2(bx,-r*0.06))-r*0.105;',
+'    col=mix(col,vec3(1.0,0.55,0.60),smoothstep(aa*3.0,-aa,dBlush)*0.34*inScoop*faceFade);',
+'  }',
+'  outColor=vec4(col,1.0);',
+'}'].join('\n');
 
-<p><strong>Where is my data?</strong><br>
-On your device, and only there. Sundae works completely offline — no account, no tracking, no servers. See the <a href="privacy.html">privacy policy</a>.</p>
+  var gl = canvas.getContext('webgl2',{antialias:false,alpha:false,powerPreference:'low-power'});
+  var uSize=null, uT=null, ok=false;
+  if(gl){
+    function sh(type,src){var o=gl.createShader(type);gl.shaderSource(o,src);gl.compileShader(o);
+      if(!gl.getShaderParameter(o,gl.COMPILE_STATUS)){console.warn(gl.getShaderInfoLog(o));return null;}return o;}
+    var vs=sh(gl.VERTEX_SHADER,vert), fs=sh(gl.FRAGMENT_SHADER,frag);
+    if(vs&&fs){
+      var prog=gl.createProgram();gl.attachShader(prog,vs);gl.attachShader(prog,fs);gl.linkProgram(prog);
+      if(gl.getProgramParameter(prog,gl.LINK_STATUS)){
+        gl.useProgram(prog);
+        var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+        gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+        var loc=gl.getAttribLocation(prog,'p');gl.enableVertexAttribArray(loc);
+        gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+        uSize=gl.getUniformLocation(prog,'uSize');uT=gl.getUniformLocation(prog,'uT');ok=true;
+      }
+    }
+  }
+  if(!ok){
+    canvas.style.display='none';
+    capEl.textContent='Your browser cannot run the live melt. The iPhone app still can.';
+  }
 
-<p><strong>The ambience stopped when I locked my phone.</strong><br>
-Background audio should keep playing. If it stops, check that Silent Mode isn't on and that no other app took over audio playback.</p>
+  function resize(){
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    var w=Math.round(canvas.clientWidth*dpr), h=Math.round(canvas.clientHeight*dpr);
+    if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;if(ok)gl.viewport(0,0,w,h);}
+  }
+  window.addEventListener('resize',resize);
 
-<footer>© 2026 Fei Xu · <a href="privacy.html">Privacy Policy</a></footer>
+  function mmss(sec){
+    sec=Math.max(0,Math.ceil(sec));
+    var m=Math.floor(sec/60), s=sec%60;
+    return m+':'+(s<10?'0':'')+s;
+  }
+  function reset(){
+    mode='demo'; elapsedBefore=0; startedAt=0;
+    goEl.textContent='Start · '+minutes+' min'; goEl.hidden=false; stopEl.hidden=true;
+    capEl.textContent='A '+minutes+'-minute session, sped up';
+  }
+
+  goEl.addEventListener('click',function(){
+    if(mode==='running') return;
+    if(mode==='done'){ reset(); return; }
+    mode='running'; startedAt=performance.now(); elapsedBefore=0;
+    goEl.hidden=true; stopEl.hidden=false; stopEl.textContent='Step away';
+    capEl.textContent='Focusing';
+  });
+  stopEl.addEventListener('click',function(){
+    if(mode==='running'){
+      elapsedBefore += (performance.now()-startedAt)/1000;
+      mode='napping'; stopEl.textContent='Wake it up';
+      capEl.textContent='Napping. Nothing is lost.';
+    } else if(mode==='napping'){
+      mode='running'; startedAt=performance.now();
+      stopEl.textContent='Step away'; capEl.textContent='Focusing';
+    }
+  });
+
+  var last=0;
+  function frame(now){
+    requestAnimationFrame(frame);
+    if(now-last < 33) return;            // ~30fps is plenty, and kinder to battery
+    last=now;
+    resize();
+    var total=minutes*60, t=0;
+    if(mode==='demo'){
+      var cyc=15000, x=(now%cyc)/cyc;    // 15s loop: melt, then hold
+      t=Math.min(1,x/0.82);
+      clockEl.textContent=mmss(total*(1-t));
+    } else if(mode==='running'){
+      var el=elapsedBefore+(now-startedAt)/1000;
+      t=Math.min(1,el/total);
+      clockEl.textContent=mmss(total-el);
+      if(t>=1){
+        mode='done'; goEl.hidden=false; stopEl.hidden=true;
+        goEl.textContent='Again'; capEl.textContent='Made it. That counts.';
+      }
+    } else if(mode==='napping'){
+      t=Math.min(1,elapsedBefore/total);
+      clockEl.textContent=mmss(total-elapsedBefore);
+    } else {
+      t=1; clockEl.textContent='0:00';
+    }
+    if(ok){ gl.uniform2f(uSize,canvas.width,canvas.height); gl.uniform1f(uT,t); gl.drawArrays(gl.TRIANGLES,0,3); }
+  }
+  reset(); resize(); requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
