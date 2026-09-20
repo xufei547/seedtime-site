@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Printfit — Print photos at real size</title>
+<meta name="description" content="Printfit lays your photos out at an exact finished size on A4, Letter or photo paper and exports a PDF that prints true to size. Support and help.">
+<meta property="og:title" content="Printfit — Print photos at real size">
+<meta property="og:description" content="Type the size you want. Printfit puts exactly that size on paper.">
+<meta property="og:image" content="https://xufei547.github.io/seedtime-site/printfit/og.jpg">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    color-scheme: light dark;
+    --ground: #ECEAE5; --surface: #FFFFFF; --ink: #1B1A18;
+    --ink2: #6A6864; --ink3: #7A7874; --accent: #2F55D4; --fill: #F1F0EC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #141413; --surface: #1F1F1E; --ink: #F2F0EA;
+      --ink2: #A8A59E; --ink3: #8C8983; --accent: #7A94FF; --fill: #2B2B29;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    max-width: 720px; margin: 0 auto; padding: 56px 22px 80px;
+    line-height: 1.65; color: var(--ink); background: var(--ground);
+    -webkit-font-smoothing: antialiased;
+  }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+  header img { width: 72px; height: 72px; border-radius: 16px; }
+  h1 { font-size: 1.9rem; margin: 0; letter-spacing: -0.02em; }
+  .tag { color: var(--ink2); margin: 2px 0 0; }
+  h2 { font-size: 1.15rem; margin-top: 2.4em; margin-bottom: 0.4em; letter-spacing: -0.01em; }
+  h3 { font-size: 1rem; margin-top: 1.6em; margin-bottom: 0.2em; }
+  p, li { color: var(--ink); }
+  .lead { font-size: 1.1rem; margin-top: 28px; }
+  .card { background: var(--surface); border-radius: 16px; padding: 18px 22px; margin: 22px 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .shots { display: flex; gap: 14px; margin: 28px 0 8px; overflow-x: auto; padding-bottom: 6px; }
+  .shots figure { margin: 0; flex: 0 0 auto; width: 210px; }
+  .shots img { width: 100%; border-radius: 12px; display: block; box-shadow: 0 6px 22px rgba(0,0,0,0.13); }
+  .shots figcaption { font-size: 0.82rem; color: var(--ink3); margin-top: 8px; }
+  ol, ul { padding-left: 1.2em; }
+  li { margin: 0.35em 0; }
+  code { background: var(--fill); padding: 1px 6px; border-radius: 5px; font-size: 0.9em; }
+  footer { margin-top: 64px; font-size: 0.85rem; color: var(--ink3); }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="icon.png" alt="Printfit app icon" width="72" height="72">
+  <div>
+    <h1>Printfit</h1>
+    <p class="tag">Print photos at real size</p>
+  </div>
+</header>
+
+<p class="lead">Type the size you want. Printfit puts exactly that size on paper — then gives you a PDF that prints true to size on A4, Letter or photo paper.</p>
+
+<div class="shots">
+  <figure><img src="shot-size.jpg" alt="A 4 by 6 inch photo placed on an A4 sheet with dimension lines"><figcaption>Set the finished size.</figcaption></figure>
+  <figure><img src="shot-sheet.jpg" alt="One 4 by 6 print and six 2 by 3 prints arranged on one sheet"><figcaption>Mix sizes and copies on a sheet.</figcaption></figure>
+  <figure><img src="shot-ruler.jpg" alt="The free test ruler page with 10 centimetre and 4 inch scales"><figcaption>Check your printer with the free ruler.</figcaption></figure>
+</div>
+
+<h2>Getting a print that measures right</h2>
+<ol>
+  <li><strong>Print the test ruler first.</strong> On the Review &amp; Export screen, tap <em>Print a test ruler first</em>. Print that one page and measure it with a real ruler. The test ruler is always free.</li>
+  <li><strong>Use the same paper everywhere.</strong> Pick your paper in Printfit and pick the same paper in the printer dialog.</li>
+  <li><strong>Print at 100%.</strong> In the print dialog choose <em>100%</em> or <em>Actual Size</em>, and turn <em>Fit to Page</em> or <em>Scale to Fit</em> off.</li>
+  <li><strong>Measure one sheet</strong> before you print a whole batch of photo paper.</li>
+</ol>
+
+<div class="card">
+  <strong>If the print still comes out wrong:</strong> some phone print dialogs silently rescale pages and give you no option to stop it. Save the PDF to Files instead, then print it from an app or a desktop PDF reader that offers <em>Actual Size</em>. Printfit preserves the true dimensions inside the PDF; the printer decides what lands on the paper.
+</div>
+
+<h2>Questions people ask</h2>
+
+<h3>Fill or Fit — which one?</h3>
+<p><strong>Fill</strong> covers the whole frame and crops whatever doesn't fit. Drag the photo on the sheet to choose which part stays. <strong>Fit</strong> keeps the entire photo inside the frame, so you get white space when the photo and the frame have different proportions — the visible picture is then smaller than the size you typed.</p>
+
+<h3>What does the free version include?</h3>
+<p>You can build your whole layout, use every size and every paper, and print the test ruler, all for free. A free PDF export contains the first sheet, with no watermark. <strong>Printfit Full</strong> unlocks every sheet with one purchase. It is not a subscription.</p>
+
+<h3>I bought Printfit Full but it is locked on my other device</h3>
+<p>Open <em>Printing help</em> from the <code>?</code> button and tap <strong>Restore Purchases</strong>, signed in with the same Apple Account you bought it with.</p>
+
+<h3>Can I use the passport and ID sizes for an official photo?</h3>
+<p>Printfit gives you the correct <em>dimensions</em> only. It does not check the background, your head size or position, or anything else the issuing authority requires. Check their rules before you submit a photo.</p>
+
+<h3>Why does it say my photo may look soft?</h3>
+<p>That reading is the effective resolution at the size you chose. Below roughly 200 DPI a print starts to look soft up close. Enlarging a low-resolution photo cannot bring back detail that the camera never captured.</p>
+
+<h3>Can I print without margins?</h3>
+<p>You can set margins to 0 mm, but borderless printing depends on your printer, and many printers crop the edges in borderless mode. If an exact size matters more than filling the paper, keep a margin and use larger paper.</p>
+
+<h3>What are the limits?</h3>
+<p>Up to 50 photos, up to 20 copies of each, and 300 prints in total per project.</p>
+
+<h2>Contact</h2>
+<p>Email <a href="mailto:xufei547@gmail.com">xufei547@gmail.com</a>. It helps if you include your iOS version, the paper size you chose, and the print settings you used. Please don't send private photos — a description is enough.</p>
+
+<footer>
+  <a href="privacy.html">Privacy Policy</a> · <a href="../">Other apps</a><br>
+  Printfit is made by Fei Xu. Photo layout and PDF export run on your device.
+</footer>
+
+</body>
+</html>
