@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunlight — See the sun in your room</title>
+<meta name="description" content="Sunlight shows where direct sun falls in a room, for any address and any day of the year. Support and help.">
+<meta property="og:title" content="Sunlight — See the sun in your room">
+<meta property="og:description" content="Point your phone at the window. See when and where the sun comes in, today, in midsummer and in midwinter.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    color-scheme: light dark;
+    --ground: #ECEAE5; --surface: #FFFFFF; --ink: #1B1A18;
+    --ink2: #6A6864; --ink3: #7A7874; --accent: #B8641E; --fill: #F1F0EC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #141413; --surface: #1F1F1E; --ink: #F2F0EA;
+      --ink2: #A8A59E; --ink3: #8C8983; --accent: #F0A45C; --fill: #2B2B29;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    max-width: 720px; margin: 0 auto; padding: 56px 22px 80px;
+    line-height: 1.65; color: var(--ink); background: var(--ground);
+    -webkit-font-smoothing: antialiased;
+  }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+  header img { width: 72px; height: 72px; border-radius: 16px; }
+  h1 { font-size: 1.9rem; margin: 0; letter-spacing: -0.02em; }
+  .tag { color: var(--ink2); margin: 2px 0 0; }
+  h2 { font-size: 1.15rem; margin-top: 2.4em; margin-bottom: 0.4em; letter-spacing: -0.01em; }
+  h3 { font-size: 1rem; margin-top: 1.6em; margin-bottom: 0.2em; }
+  p, li { color: var(--ink); }
+  .lead { font-size: 1.1rem; margin-top: 28px; }
+  .card { background: var(--surface); border-radius: 16px; padding: 18px 22px; margin: 22px 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .shots { display: flex; gap: 14px; margin: 28px 0 8px; overflow-x: auto; padding-bottom: 6px; }
+  .shots figure { margin: 0; flex: 0 0 auto; width: 210px; }
+  .shots img { width: 100%; border-radius: 12px; display: block; box-shadow: 0 6px 22px rgba(0,0,0,0.13); }
+  .shots figcaption { font-size: 0.82rem; color: var(--ink3); margin-top: 8px; }
+  ol, ul { padding-left: 1.2em; }
+  li { margin: 0.35em 0; }
+  code { background: var(--fill); padding: 1px 6px; border-radius: 5px; font-size: 0.9em; }
+  footer { margin-top: 64px; font-size: 0.85rem; color: var(--ink3); }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="icon.png" alt="Sunlight app icon" width="72" height="72">
+  <div>
+    <h1>Sunlight</h1>
+    <p class="tag">See the sun in your room</p>
+  </div>
+</header>
+
+<p class="lead">Point your phone at a window. Sunlight shows when direct sun comes through it and how far into the room it reaches, today, on the longest day and on the shortest day. Use it before you rent or buy, or to choose which room to sleep, work or grow plants in.</p>
+<p>In Spain the app is called <em>Sol en Casa</em>, in France <em>Soleil chez moi</em>, and in Italy <em>Sole in Casa</em>.</p>
+
+<h2>Getting an accurate answer</h2>
+<ol>
+  <li><strong>Stand inside and hold your phone upright, facing the window,</strong> the way you would to take a photo through it. When the direction settles, tap <em>This is my window</em>. Keep away from speakers, radiators and steel frames, which disturb the compass. If you are asked to, wave the phone in a figure 8 to calibrate it.</li>
+  <li><strong>Measure what is opposite.</strong> Tilt the phone up to the top of the building or tree line across the street and tap <em>This is the top</em>, or <em>Nothing blocks the view</em>. Sunlight treats sun below that angle as blocked.</li>
+  <li><strong>If the compass is unreliable,</strong> use <em>Set it by hand</em> and enter the direction from a map. A window facing due south is 180°, east 90°, west 270°.</li>
+  <li><strong>Checking a place you are not in?</strong> Search the address, then set the window direction by hand from the floor plan or a map.</li>
+</ol>
+
+<div class="card">
+  <strong>What Sunlight models and what it doesn't.</strong> It calculates the sun's true position for the address and date and checks it against your window's direction, the depth of the window reveal, and the height of what is opposite. It does not know about individual trees, balconies above you, awnings or clouds. The room picture is a model room used to show the patch of light. Your own room's size and furniture will differ.
+</div>
+
+<h2>Questions people ask</h2>
+
+<h3>What does the free version include?</h3>
+<p>One place, one window, and today's sun, including the time direct sun comes in and how far it reaches. Aiming and setting a window by hand are always free. <strong>Sunlight Full</strong> is a one-time purchase that adds more places, midsummer and midwinter, several windows and rooms per home, and share cards. It is not a subscription.</p>
+
+<h3>I bought Sunlight Full but it is locked on another device</h3>
+<p>Open Settings (the gear icon) and tap <strong>Restore purchase</strong>, signed in with the same Apple Account you bought it with.</p>
+
+<h3>Why does it say “no direct sun” when my room is bright?</h3>
+<p>Sunlight counts <em>direct</em> sun only: sunshine that falls straight through the glass. A north-facing room in the northern hemisphere can be bright all day with sky light but still get little or no direct sun.</p>
+
+<h3>What does “Strong afternoon sun in summer” mean?</h3>
+<p>It estimates how much direct sun comes through the window on a clear midsummer afternoon, between 2 pm and 9 pm. West-facing rooms often get the most, and they can overheat.</p>
+
+<h3>Can I fix a window I measured wrongly?</h3>
+<p>Yes. In Settings, <em>Re-aim at window</em> repeats the compass step and <em>Re-measure</em> repeats the building step. In the Rooms list, the ⋯ button on each window does the same.</p>
+
+<h2>Contact</h2>
+<p>Email <a href="mailto:xufei547@gmail.com">xufei547@gmail.com</a>. It helps to include the city, the window direction the app shows, and your iOS version.</p>
+
+<footer>
+  <a href="privacy/">Privacy Policy</a> · <a href="../">Other apps</a><br>
+  Sunlight is made by Fei Xu. Sun calculations run on your device.
+</footer>
+
+</body>
+</html>
