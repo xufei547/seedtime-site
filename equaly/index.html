@@ -45,7 +45,7 @@
 <p>On most devices Equaly adds about 8 milliseconds of delay (measured on a MacBook Air’s built-in speakers), too little to notice even in video. Now and then macOS doesn’t deliver a device’s audio to the low-latency path; Equaly notices within about two seconds and switches to Compatibility, which adds about 70 milliseconds, then tries the low-latency path again every minute and switches back when it works. You may hear a short skip when it switches.</p>
 
 <h3>The panel says “Waiting for audio”</h3>
-<p>That is normal until something plays. Equaly starts processing as soon as it hears sound; the first fraction of a second plays without the equalizer.</p>
+<p>That is normal until something plays. Equaly starts processing as soon as it hears sound; the first moment, up to about two seconds after Equaly starts, plays without the equalizer. After that, Equaly keeps your output device ready while the equalizer is on, so later sounds are processed from the start.</p>
 
 <h3>Something sounds wrong</h3>
 <p>Turn the switch at the top of the panel off: Equaly steps out of the audio path completely and your Mac sounds exactly as it did before. Quitting Equaly does the same. Presets lower the overall level a little (the preamp) so that boosted bands don’t distort; if you raise bands yourself, lower the preamp to match.</p>
