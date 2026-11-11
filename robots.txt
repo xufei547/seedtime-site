@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xufei547.github.io/seedtime-site/sitemap.xml
