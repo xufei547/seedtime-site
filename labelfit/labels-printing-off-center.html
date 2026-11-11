@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why your labels print off-center, and how to fix it</title>
+<meta name="description" content="Why address labels drift off-center or lower down the sheet, from scaling to paper-path stretch, and how to measure and correct it with one plain-paper test page.">
+<link rel="canonical" href="https://xufei547.github.io/seedtime-site/labelfit/labels-printing-off-center.html">
+<link rel="alternate" hreflang="en" href="https://xufei547.github.io/seedtime-site/labelfit/labels-printing-off-center.html">
+<link rel="alternate" hreflang="de" href="https://xufei547.github.io/seedtime-site/labelfit/etiketten-drucken-verrutscht.html">
+<meta property="og:title" content="Why your labels print off-center, and how to fix it">
+<meta property="og:description" content="Why address labels drift off-center or lower down the sheet, from scaling to paper-path stretch, and how to measure and correct it with one plain-paper test page.">
+<meta property="og:type" content="article">
+<style>
+  :root { color-scheme: light dark; --ground: #ECEAE5; --surface: #FFFFFF; --ink: #1B1A18; --ink2: #6A6864; --ink3: #7A7874; --accent: #2F55D4; --fill: #F1F0EC; }
+  @media (prefers-color-scheme: dark) { :root { --ground: #141413; --surface: #1F1F1E; --ink: #F2F0EA; --ink2: #A8A59E; --ink3: #8C8983; --accent: #7A94FF; --fill: #2B2B29; } }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 44px 22px 80px; line-height: 1.68; color: var(--ink); background: var(--ground); -webkit-font-smoothing: antialiased; }
+  nav.top { font-size: 0.9rem; margin-bottom: 26px; }
+  h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 0.6em; letter-spacing: -0.02em; }
+  h2 { font-size: 1.12rem; margin-top: 2em; margin-bottom: 0.4em; }
+  .answer { font-size: 1.08rem; }
+  figure { margin: 26px 0; }
+  figure img { display: block; max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 22px rgba(0,0,0,0.13); }
+  figure.narrow img { max-width: 340px; }
+  figcaption { font-size: 0.85rem; color: var(--ink3); margin-top: 8px; }
+  a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+  ol, ul { padding-left: 1.2em; } li { margin: 0.4em 0; }
+  em { font-style: normal; font-weight: 600; }
+  .more { background: var(--surface); border-radius: 14px; padding: 14px 20px; margin-top: 36px; }
+  .more ul { margin: 0.3em 0 0; }
+  footer { margin-top: 48px; font-size: 0.85rem; color: var(--ink3); }
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← Labelfit support</a></nav>
+<article>
+<h1>Why your labels print off-center, and how to fix it</h1>
+<p class="answer">Labels drift when the printer puts the page slightly away from where the file says. Usually it's one of three things: the page was scaled to fit, the printer shifts everything by a millimetre or two, or it stretches the page slightly as the paper feeds through. The first is a setting; the other two you can measure once and correct.</p>
+
+<h2>What is going on</h2>
+<ul>
+  <li><strong>Scaling.</strong> "Fit to page" or "Scale to fit" shrinks the whole sheet by a few percent, so the top labels look fine and the bottom ones miss. Print at 100% or Actual Size.</li>
+  <li><strong>A fixed shift.</strong> Every printer has its own idea of where the page starts. A shift of 0.5 to 2 mm in one direction is common.</li>
+  <li><strong>Stretch along the paper path.</strong> On the black-and-white laser printer we tested, the page came out about 0.5% longer than it should. That is nothing at the top of a sheet and about 1.5 mm by the bottom, which is why the last rows are worse.</li>
+  <li><strong>Sheet-to-sheet variation.</strong> Each sheet feeds a little differently, about half a millimetre either way on that printer. No setting removes this, so the text should not run right up to the label's edge.</li>
+</ul>
+
+<h2>How to correct it in Labelfit</h2>
+<ol>
+  <li>Open <em>Line up with your printer</em> and tap <em>Print test page</em>. Use plain paper.</li>
+  <li>Lay the printout on a label sheet, edges together, and hold both against a window.</li>
+  <li>Labels A and B each carry two short scales across their edges. Where the real label's edge crosses a scale is the reading, in millimetres. Enter the four readings and tap <em>Save readings</em>.</li>
+  <li>Print the test page again. Every scale should now read 0, give or take half a millimetre.</li>
+</ol>
+<figure><img src="img/test-page-scales.jpg" width="700" height="512" alt="Part of Labelfit's test page: label outlines, centre crosses and the two millimetre scales at label A" loading="lazy"><figcaption>Part of the test page around label A.</figcaption></figure>
+<figure class="narrow"><img src="img/calibration-readings.jpg" width="600" height="591" alt="The four readings A across, A down, B across and B down in Labelfit, with Save readings" loading="lazy"><figcaption>Entering the four readings.</figcaption></figure>
+<p>Two points in each direction let Labelfit work out both the shift and the stretch, so the bottom row is corrected as well as the top. The result is within about a millimetre, and Labelfit keeps text at least 2 mm in from every edge so the remaining wobble stays inside the label. Corrections are saved per printer.</p>
+
+<h2>Without the app</h2>
+<p>Print the label template's outlines on plain paper, compare it with a label sheet against a window, and adjust the page margins in your word processor by what you see. Some printers also have a registration or margin adjustment in their own settings. Either way, fix scaling first.</p>
+
+<p><a href="https://apps.apple.com/app/id6833096342">Labelfit on the App Store</a>; test pages are always free.</p>
+</article>
+<div class="more"><strong>Related</strong>
+  <ul>
+    <li><a href="how-to-print-address-labels-from-iphone-contacts.html">How to print address labels from iPhone contacts</a></li>
+    <li><a href="print-avery-5160-labels-from-ipad.html">How to print on Avery 5160 labels from an iPad</a></li>
+    <li><a href="christmas-card-address-labels-at-home.html">Printing Christmas card address labels at home</a></li>
+    <li><a href="etiketten-drucken-verrutscht.html">Auf Deutsch: Etiketten drucken verrutscht</a></li>
+  </ul>
+</div>
+<footer>Avery and Zweckform are trademarks of their owners; Labelfit is not affiliated with them. Labelfit is made by Fei Xu. <a href="privacy.html">Privacy</a> · <a href="https://apps.apple.com/app/id6833096342">App Store</a></footer>
+</body>
+</html>
