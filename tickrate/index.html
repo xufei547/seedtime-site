@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tickrate · Support</title>
+<meta name="description" content="Help for Tickrate: checking a mechanical watch against atomic time, listening for a quick estimate, calibrating your iPhone, purchases and contact.">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header><img src="icon.png" alt=""><div><h1>Tickrate</h1><p class="lead">How many seconds a day does your mechanical watch gain or lose?</p></div></header>
+<nav><a href="#check">Atomic time checks</a><a href="#listen">Listening</a><a href="#calibrate">Calibrate this iPhone</a><a href="#purchase">Purchase</a><a href="#contact">Contact</a><a href="privacy/">Privacy</a></nav>
+
+<section id="check">
+<h2>Atomic time checks — the true rate</h2>
+<p>Open a watch and tap <b>Check</b>. Tickrate shows atomic time from Apple’s time server (or, if it doesn’t answer, from Cloudflare’s or Google’s). Watch your own second hand and tap the button the moment it reaches 12, then confirm the hour and minute your watch showed. Or choose <b>Enter the time instead</b> and type what the watch shows.</p>
+<p>Check again a few hours or a day later. Tickrate draws a line through your checks; its slope is the daily rate, with a range. Two checks a day apart give about ±0.4 seconds a day; a week apart, far less. Your reaction time is about the same each time, so it mostly cancels out.</p>
+<div class="card">
+<h3>Tips</h3>
+<ul>
+<li>Every check can be edited or deleted: tap it in the history.</li>
+<li>After regulating, setting the time, a service, or winding a stopped watch, tap <b>Start over…</b>. Checks after that make a new line; earlier ones stay in the history.</li>
+<li>No connection? The check uses your iPhone’s time and says so. It is usually close, but atomic time is better.</li>
+</ul>
+</div>
+</section>
+
+<section id="listen">
+<h2>Listening — a quick estimate</h2>
+<p>Put the watch dial up on something soft in a quiet room. Touch the bottom edge of your iPhone (the microphone) to the side of the case, next to the crown, and keep Tickrate open for up to a minute. It stops by itself when the range is narrow enough.</p>
+<p class="note">Keep the back of the iPhone away from the watch: MagSafe magnets can magnetise a watch and change its rate.</p>
+<h3>Why a range, not one number?</h3>
+<p>A mechanical watch doesn’t run at one fixed rate: position, how wound it is and temperature all move it by seconds a day. A listen hears a few dozen seconds — a snapshot. Tickrate shows how wide the uncertainty is and where it comes from: the scatter between ticks, the difference between two independent ways of measuring, the watch changing while listening, and your iPhone’s own clock.</p>
+<h3>“No reading this time”</h3>
+<p>Tickrate only shows a number when two independent checks agree. It tells you why when they don’t: ticking too faint, too much noise, a beat rate it doesn’t support, an interrupted recording, or a watch whose rate changed while listening. Move closer to the crown, find a quieter spot, or use atomic time checks, which work in any room. Quartz watches can’t be measured by listening.</p>
+</section>
+
+<section id="calibrate">
+<h2>Calibrate this iPhone</h2>
+<p>Each iPhone’s sound clock runs a little fast or slow — on one iPhone we measured 2 seconds a day — and that shifts every listening result. Calibrating once removes it.</p>
+<ol>
+<li>At bedtime, plug in your iPhone.</li>
+<li>Open Settings › Calibrate this iPhone and leave it. The screen stays on, dimmed.</li>
+<li>It stops by itself when the result is accurate enough, usually within an hour.</li>
+</ol>
+<p>If you use your phone in between, nothing is lost: Tickrate keeps what it has collected and continues the next time the page is open. It needs an internet connection, and the page must stay open — iPhone doesn’t let apps read atomic time in the background. Atomic time checks don’t need calibration.</p>
+<p>A quartz watch or clock whose second hand jumps once a second gives a quick alternative (Settings › Calibrate with a quartz watch).</p>
+</section>
+
+<section id="purchase">
+<h2>Free and Tickrate Unlimited</h2>
+<p>The free version keeps one watch, fully usable: atomic time checks, listening and calibration, with the last 30 days of history on screen. <b>Tickrate Unlimited</b> is a one-time purchase — no subscription, no account — that adds every watch in your collection, your full history, CSV and backup export and import, and quartz-watch calibration. It is shared with your family through Family Sharing.</p>
+<p>Bought it on another iPhone? Open Settings › Restore Purchase.</p>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Questions, ideas or a problem: write to <a href="mailto:xufei547@gmail.com?subject=Tickrate">xufei547@gmail.com</a>. It helps to say your iPhone model and, for listening, the watch and its movement if you know it.</p>
+</section>
+<footer>Tickrate · <a href="privacy/">Privacy Policy</a></footer>
+</main>
+</body>
+</html>
