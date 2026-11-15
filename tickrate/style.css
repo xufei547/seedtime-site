@@ -16,3 +16,37 @@ a { color: var(--accent); }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 4px 20px 16px; margin-top: 20px; }
 .note { border-left: 3px solid var(--steel); padding: 2px 0 2px 14px; color: var(--ink2); }
 footer { margin-top: 48px; color: var(--ink2); font-size: 14px; }
+/* Product page */
+.intro p { margin: 10px 0; }
+.intro p:first-child { font-size: 19px; }
+.store { margin: 18px 0 0; }
+.soon { display: inline-block; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink2); font-size: 15px; }
+.badge { display: inline-block; padding: 8px 18px; border-radius: 10px; background: var(--ink); color: var(--ground); text-decoration: none; font-weight: 600; }
+nav { display: flex; flex-wrap: wrap; gap: 4px 16px; } nav a { margin-right: 0; }
+.table { margin-top: 16px; }
+table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; font-size: 15px; line-height: 1.45; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+thead th { font-family: Futura, "Futura PT", "Avenir Next", "Helvetica Neue", sans-serif; font-weight: 600; background: var(--ground); }
+tbody th { font-weight: 600; color: var(--ink2); width: 18%; }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+.qa h3 { margin-top: 28px; }
+.qa p { margin-top: 4px; }
+.sources { font-size: 14px; color: var(--ink2); }
+.sources li { margin: 6px 0; }
+@media (max-width: 640px) {
+  main { padding: 24px 16px 56px; }
+  thead { display: none; }
+  table, tbody, tr, th, td { display: block; width: 100%; }
+  table { border: 0; background: none; }
+  tr { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
+  tbody th { width: auto; background: var(--ground); color: var(--ink); }
+  td { border-bottom: 1px solid var(--line); }
+  td:last-child { border-bottom: 0; }
+  td::before { content: attr(data-label); display: block; font-size: 13px; font-weight: 600; color: var(--ink2); }
+}
+.card.shot { display: grid; grid-template-columns: 1fr 200px; gap: 20px; align-items: start; padding-bottom: 20px; }
+.card.shot img { width: 100%; height: auto; margin-top: 20px; border-radius: 18px; border: 1px solid var(--line); display: block; }
+@media (max-width: 640px) {
+  .card.shot { grid-template-columns: 1fr; gap: 0; }
+  .card.shot img { max-width: 240px; margin: 4px auto 0; }
+}

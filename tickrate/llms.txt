@@ -1,0 +1,28 @@
+# Tickrate
+
+> Tickrate is an iPhone app that tells you how many seconds a day your mechanical watch gains or loses. It compares the watch with atomic time a few hours or days apart for its true daily rate, and it can listen to the ticking through the iPhone's microphone for a quick estimate, always shown as a range. One watch is free, with unlimited checks and listens; its history shows the last 30 days. Tickrate Unlimited, a one-time purchase (US$7.99 in the United States), adds every watch, the full history, export and import.
+
+Tickrate measures only the rate (seconds a day gained or lost), not amplitude or beat error. Listening gives an estimate as a range and gives no number when its two methods disagree; atomic time checks over a day or more give the true daily rate. Sound is analysed on the iPhone and never recorded or uploaded. iPhone only, iOS 17 or later.
+
+## Pages
+
+- [Tickrate, English](https://xufei547.github.io/seedtime-site/tickrate/): what it is, how it works, comparison with a timegrapher, limits, questions and answers
+- [Tickrate, Deutsch](https://xufei547.github.io/seedtime-site/tickrate/de/): the same page in Deutsch
+- [Tickrate, Français](https://xufei547.github.io/seedtime-site/tickrate/fr/): the same page in Français
+- [Tickrate, Español](https://xufei547.github.io/seedtime-site/tickrate/es/): the same page in Español
+- [Support](https://xufei547.github.io/seedtime-site/tickrate/support/): how to use atomic time checks, listening and calibration; purchase; contact
+- [Privacy](https://xufei547.github.io/seedtime-site/tickrate/privacy/): no account, no data collected; time servers used
+
+## Questions answered on the page
+
+- Can an iPhone tell if a mechanical watch runs fast or slow?
+- How do I check my watch's accuracy without a timegrapher?
+- How many seconds a day is normal for a mechanical watch?
+- How accurate is measuring with the iPhone microphone?
+- Why does Tickrate show a range instead of one number?
+- What if Tickrate can't hear my watch?
+- Does Tickrate need an internet connection?
+- Does Tickrate record or upload sound?
+- How does Tickrate compare with a timegrapher?
+- Which watches does Tickrate work with?
+- What does Tickrate cost?

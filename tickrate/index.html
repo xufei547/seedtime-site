@@ -3,63 +3,201 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tickrate · Support</title>
-<meta name="description" content="Help for Tickrate: checking a mechanical watch against atomic time, listening for a quick estimate, calibrating your iPhone, purchases and contact.">
+<title>Tickrate: check how many seconds a day your mechanical watch gains or loses</title>
+<meta name="description" content="Tickrate is an iPhone app that measures a mechanical watch&#x27;s daily rate: atomic time checks for the true rate, and listening through the microphone for a quick estimate shown as a range. One watch free.">
+<link rel="canonical" href="https://xufei547.github.io/seedtime-site/tickrate/">
+<link rel="alternate" hreflang="en" href="https://xufei547.github.io/seedtime-site/tickrate/">
+<link rel="alternate" hreflang="de" href="https://xufei547.github.io/seedtime-site/tickrate/de/">
+<link rel="alternate" hreflang="fr" href="https://xufei547.github.io/seedtime-site/tickrate/fr/">
+<link rel="alternate" hreflang="es" href="https://xufei547.github.io/seedtime-site/tickrate/es/">
+<link rel="alternate" hreflang="x-default" href="https://xufei547.github.io/seedtime-site/tickrate/">
+<meta name="apple-itunes-app" content="app-id=6835108892">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tickrate: check how many seconds a day your mechanical watch gains or loses">
+<meta property="og:description" content="Tickrate is an iPhone app that measures a mechanical watch&#x27;s daily rate: atomic time checks for the true rate, and listening through the microphone for a quick estimate shown as a range. One watch free.">
+<meta property="og:url" content="https://xufei547.github.io/seedtime-site/tickrate/">
+<meta property="og:image" content="https://xufei547.github.io/seedtime-site/tickrate/icon.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "Tickrate",
+ "operatingSystem": "iOS 17 or later",
+ "applicationCategory": "UtilitiesApplication",
+ "description": "Tickrate is an iPhone app that tells you how many seconds a day your mechanical watch gains or loses. It compares the watch with atomic time a few hours or days apart for its true daily rate, and it can listen to the ticking through the iPhone's microphone for a quick estimate, always shown as a range. One watch is free, with unlimited checks and listens; its history shows the last 30 days. Tickrate Unlimited, a one-time purchase (US$7.99 in the United States), adds every watch, the full history, export and import.",
+ "url": "https://xufei547.github.io/seedtime-site/tickrate/",
+ "inLanguage": "en",
+ "image": "https://xufei547.github.io/seedtime-site/tickrate/icon.png",
+ "offers": [
+  {
+   "@type": "Offer",
+   "price": "0",
+   "priceCurrency": "USD",
+   "description": "One watch is free, with unlimited atomic time checks, listens and iPhone calibration; its history and chart show the last 30 days, and older entries are kept. Tickrate Unlimited is a one-time purchase (US$7.99 in the United States; prices vary by country), with no subscription and no account. It adds every watch, the full history, export and import, and calibration with a quartz watch, and it works with Family Sharing."
+  }
+ ],
+ "publisher": {
+  "@type": "Person",
+  "name": "Fei Xu"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "inLanguage": "en",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Can an iPhone tell if a mechanical watch runs fast or slow?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Tickrate does it two ways: comparing the watch with atomic time a few hours or days apart gives its true daily rate, about ±0.4 seconds a day with checks a day apart. Listening to the ticking for 20 to 60 seconds gives a quick estimate of the current rate, shown as a range."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I check my watch's accuracy without a timegrapher?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Compare it with an accurate clock at two moments and divide the difference by the time between them. Tickrate does this for you: it shows atomic time, you tap when your second hand reaches 12, and after the second check it shows the rate in seconds per day. Your reaction time is about the same each time, so it mostly cancels out."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many seconds a day is normal for a mechanical watch?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It depends on the movement; anything from a few seconds to a few tens of seconds a day is common. A certified chronometer must average between −4 and +6 seconds a day in the COSC test. Widely used affordable automatic movements are specified more loosely: Seiko's NH35, for example, at −20 to +40 seconds a day. Position, how fully wound the watch is and temperature move the rate by seconds a day, so one reading is a snapshot."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How accurate is measuring with the iPhone microphone?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "On a clean signal from a modern watch, a 30-second listen gives a range about ±0.5 to ±1 second a day wide, once the iPhone's own clock is calibrated. Each iPhone's audio clock runs slightly fast or slow (about 2 seconds a day on the iPhone we measured), so before calibrating Tickrate widens every range to about ±3 seconds a day instead of hiding that error. These figures come from our tests on recordings of real watches and synthetic ticking, not from a large set of iPhones."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why does Tickrate show a range instead of one number?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Because one exact-looking number would claim more than a short listen can know. The range is built from what can move the result: the scatter between ticks, the difference between two independent measuring methods, the watch changing while it is heard, and the iPhone's own clock. The app shows how much each part adds, and when the two methods disagree it shows no number at all."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What if Tickrate can't hear my watch?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It says so, gives no number, and tells you why. Try a quiet room, the watch dial up on something soft, and the bottom edge of the iPhone, where the microphone is, touching the case next to the crown. If it still can't hear it, use atomic time checks: they work with any watch that has a seconds hand, in any room."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does Tickrate need an internet connection?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Only for atomic time. Checks and calibrating the iPhone read the time from public time servers: Apple's first, Cloudflare's or Google's if Apple's doesn't answer. Listening works offline, and without a connection a check uses the iPhone's own clock and says so."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does Tickrate record or upload sound?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The microphone is used only while you listen to a watch or calibrate the iPhone, and the sound is analysed on the iPhone and never recorded, saved or uploaded. There is no account; your watches and results stay on your iPhone, and you can export them as CSV or a backup file."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How does Tickrate compare with a timegrapher?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A timegrapher measures more: rate, amplitude and beat error in each position, with a contact microphone; Tickrate measures only the rate. What Tickrate adds is the long view: atomic time checks over days give the average rate as you actually wear the watch. If you regulate movements or need amplitude and beat error, use a timegrapher."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which watches does Tickrate work with?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Atomic time checks work with any watch that has a seconds hand, mechanical or quartz. Listening works with mechanical watches at standard beat rates from 12,000 to 43,200 beats per hour, such as 21,600 and 28,800; Tickrate can detect the beat rate itself. Quartz watches can't be measured by listening."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What does Tickrate cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "One watch is free, with unlimited atomic time checks, listens and iPhone calibration; its history and chart show the last 30 days, and older entries are kept. Tickrate Unlimited is a one-time purchase (US$7.99 in the United States; prices vary by country), with no subscription and no account. It adds every watch, the full history, export and import, and calibration with a quartz watch, and it works with Family Sharing."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <main>
-<header><img src="icon.png" alt=""><div><h1>Tickrate</h1><p class="lead">How many seconds a day does your mechanical watch gain or lose?</p></div></header>
-<nav><a href="#check">Atomic time checks</a><a href="#listen">Listening</a><a href="#calibrate">Calibrate this iPhone</a><a href="#purchase">Purchase</a><a href="#contact">Contact</a><a href="privacy/">Privacy</a></nav>
-
-<section id="check">
-<h2>Atomic time checks — the true rate</h2>
-<p>Open a watch and tap <b>Check</b>. Tickrate shows atomic time from Apple’s time server (or, if it doesn’t answer, from Cloudflare’s or Google’s). Watch your own second hand and tap the button the moment it reaches 12, then confirm the hour and minute your watch showed. Or choose <b>Enter the time instead</b> and type what the watch shows.</p>
-<p>Check again a few hours or a day later. Tickrate draws a line through your checks; its slope is the daily rate, with a range. Two checks a day apart give about ±0.4 seconds a day; a week apart, far less. Your reaction time is about the same each time, so it mostly cancels out.</p>
-<div class="card">
-<h3>Tips</h3>
+<header><img src="icon.png" alt="Tickrate app icon" width="72" height="72"><div><h1>Tickrate</h1><p class="lead">How many seconds a day does your mechanical watch gain or lose?</p></div></header>
+<div class="intro"><p>Tickrate is an iPhone app that tells you how many seconds a day your mechanical watch gains or loses.</p><p>It compares the watch with atomic time a few hours or days apart for its true daily rate, and it can listen to the ticking through the iPhone&#x27;s microphone for a quick estimate, always shown as a range.</p><p>One watch is free, with unlimited checks and listens; its history shows the last 30 days. Tickrate Unlimited, a one-time purchase (US$7.99 in the United States), adds every watch, the full history, export and import.</p></div>
+<p class="store"><span class="soon">Coming soon to the App Store</span></p>
+<nav><a href="#how">How it works</a><a href="#compare">Compared</a><a href="#limits">Limits</a><a href="#faq">Questions</a><a href="support/">Support</a><a href="privacy/">Privacy</a></nav>
+<section id="how"><h2>How it works</h2>
+<div class="card shot"><div><h3>Atomic time checks: the true rate</h3><p>Open a watch and tap Check. Tickrate shows atomic time; you tap the moment your second hand reaches 12. Check again hours or days later and Tickrate draws a line through your checks: its slope is the daily rate, with a range. Checks a day apart give about ±0.4 seconds a day; a week apart, much less.</p></div><img src="img/en-check.jpg" alt="Tickrate check screen: the atomic time dial frozen at the moment of the tap, then the hour and minute the watch showed" width="280" height="380" loading="lazy" decoding="async"></div>
+<div class="card shot"><div><h3>Listening: a quick estimate</h3><p>Touch the bottom edge of your iPhone to the watch case next to the crown, in a quiet room, for 20 to 60 seconds. Tickrate measures the ticking two independent ways and shows the rate as a range, with what the range is made of. If the two ways disagree, it shows no number and says why.</p></div><img src="img/en-listen.jpg" alt="Tickrate listening result: Gaining 1 to 7.5 s/day, with what the range is made of" width="280" height="380" loading="lazy" decoding="async"></div>
+<div class="card shot"><div><h3>Calibrate this iPhone, once</h3><p>Each iPhone&#x27;s audio clock runs a little fast or slow, and that shifts every listen. Leave Tickrate open on the charger for about an hour and it measures your iPhone&#x27;s clock against atomic time and corrects every later listen.</p></div><img src="img/en-calibrate.jpg" alt="Tickrate calibration page: 25 minutes collected, with usable time and uncertainty against their targets" width="280" height="380" loading="lazy" decoding="async"></div>
+</section>
+<section id="compare"><h2>Three ways to find your watch&#x27;s rate</h2>
+<div class="table"><table>
+<thead><tr><th scope="col"></th><th scope="col">Tickrate (iPhone app)</th><th scope="col">Timegrapher</th><th scope="col">Manual check against a reference clock</th></tr></thead>
+<tbody>
+<tr><th scope="row">What you need</th><td data-label="Tickrate (iPhone app)">An iPhone</td><td data-label="Timegrapher">A dedicated instrument with a contact microphone</td><td data-label="Manual check against a reference clock">An accurate clock, a notebook and patience</td></tr>
+<tr><th scope="row">Cost</th><td data-label="Tickrate (iPhone app)">Free for one watch (unlimited checks and listens, last 30 days of history); one-time purchase for more</td><td data-label="Timegrapher">The price of the instrument</td><td data-label="Manual check against a reference clock">Free</td></tr>
+<tr><th scope="row">Accuracy</th><td data-label="Tickrate (iPhone app)">Checks a day apart: about ±0.4 s/day. Listening: a range about ±0.5 to ±1 s/day wide on a clean signal after calibrating the iPhone, about ±3 s/day before</td><td data-label="Timegrapher">Depends on the instrument</td><td data-label="Manual check against a reference clock">As good as your reading of the second hand, spread over the days between readings</td></tr>
+<tr><th scope="row">Time it takes</th><td data-label="Tickrate (iPhone app)">Two taps hours or days apart; or 20 to 60 seconds of listening</td><td data-label="Timegrapher">About a minute per position</td><td data-label="Manual check against a reference clock">Days</td></tr>
+<tr><th scope="row">What it tells you</th><td data-label="Tickrate (iPhone app)">Daily rate (average as worn, or right now by listening)</td><td data-label="Timegrapher">Rate, amplitude and beat error, per position</td><td data-label="Manual check against a reference clock">Average daily rate</td></tr>
+</tbody></table></div>
+<p class="note">Accuracy figures for Tickrate are from our own tests (see Sources). We give none for timegraphers because it depends on the instrument.</p>
+</section>
+<section id="limits"><h2>What Tickrate can&#x27;t do</h2>
 <ul>
-<li>Every check can be edited or deleted: tap it in the history.</li>
-<li>After regulating, setting the time, a service, or winding a stopped watch, tap <b>Start over…</b>. Checks after that make a new line; earlier ones stay in the history.</li>
-<li>No connection? The check uses your iPhone’s time and says so. It is usually close, but atomic time is better.</li>
+<li>Listening needs a quiet room and the iPhone touching the case. Some watches tick too quietly for a phone microphone.</li>
+<li>Quartz and other electronic watches can&#x27;t be measured by listening. Atomic time checks work with any watch that has a seconds hand.</li>
+<li>A listen is an estimate of the rate at that moment, in that position. The true daily rate comes from atomic time checks over a day or more.</li>
+<li>It measures the rate only, not amplitude or beat error.</li>
+<li>Until you calibrate your iPhone (about an hour on the charger), listening ranges are wider.</li>
+<li>iPhone only, iOS 17 or later.</li>
 </ul>
-</div>
 </section>
-
-<section id="listen">
-<h2>Listening — a quick estimate</h2>
-<p>Put the watch dial up on something soft in a quiet room. Touch the bottom edge of your iPhone (the microphone) to the side of the case, next to the crown, and keep Tickrate open for up to a minute. It stops by itself when the range is narrow enough.</p>
-<p class="note">Keep the back of the iPhone away from the watch: MagSafe magnets can magnetise a watch and change its rate.</p>
-<h3>Why a range, not one number?</h3>
-<p>A mechanical watch doesn’t run at one fixed rate: position, how wound it is and temperature all move it by seconds a day. A listen hears a few dozen seconds — a snapshot. Tickrate shows how wide the uncertainty is and where it comes from: the scatter between ticks, the difference between two independent ways of measuring, the watch changing while listening, and your iPhone’s own clock.</p>
-<h3>“No reading this time”</h3>
-<p>Tickrate only shows a number when two independent checks agree. It tells you why when they don’t: ticking too faint, too much noise, a beat rate it doesn’t support, an interrupted recording, or a watch whose rate changed while listening. Move closer to the crown, find a quieter spot, or use atomic time checks, which work in any room. Quartz watches can’t be measured by listening.</p>
+<section id="faq"><h2>Questions</h2>
+<section class="qa" id="q1"><h3>Can an iPhone tell if a mechanical watch runs fast or slow?</h3><p>Yes. Tickrate does it two ways: comparing the watch with atomic time a few hours or days apart gives its true daily rate, about ±0.4 seconds a day with checks a day apart. Listening to the ticking for 20 to 60 seconds gives a quick estimate of the current rate, shown as a range.</p></section>
+<section class="qa" id="q2"><h3>How do I check my watch&#x27;s accuracy without a timegrapher?</h3><p>Compare it with an accurate clock at two moments and divide the difference by the time between them. Tickrate does this for you: it shows atomic time, you tap when your second hand reaches 12, and after the second check it shows the rate in seconds per day. Your reaction time is about the same each time, so it mostly cancels out.</p></section>
+<section class="qa" id="q3"><h3>How many seconds a day is normal for a mechanical watch?</h3><p>It depends on the movement; anything from a few seconds to a few tens of seconds a day is common. A certified chronometer must average between −4 and +6 seconds a day in the COSC test. Widely used affordable automatic movements are specified more loosely: Seiko&#x27;s NH35, for example, at −20 to +40 seconds a day. Position, how fully wound the watch is and temperature move the rate by seconds a day, so one reading is a snapshot.</p></section>
+<section class="qa" id="q4"><h3>How accurate is measuring with the iPhone microphone?</h3><p>On a clean signal from a modern watch, a 30-second listen gives a range about ±0.5 to ±1 second a day wide, once the iPhone&#x27;s own clock is calibrated. Each iPhone&#x27;s audio clock runs slightly fast or slow (about 2 seconds a day on the iPhone we measured), so before calibrating Tickrate widens every range to about ±3 seconds a day instead of hiding that error. These figures come from our tests on recordings of real watches and synthetic ticking, not from a large set of iPhones.</p></section>
+<section class="qa" id="q5"><h3>Why does Tickrate show a range instead of one number?</h3><p>Because one exact-looking number would claim more than a short listen can know. The range is built from what can move the result: the scatter between ticks, the difference between two independent measuring methods, the watch changing while it is heard, and the iPhone&#x27;s own clock. The app shows how much each part adds, and when the two methods disagree it shows no number at all.</p></section>
+<section class="qa" id="q6"><h3>What if Tickrate can&#x27;t hear my watch?</h3><p>It says so, gives no number, and tells you why. Try a quiet room, the watch dial up on something soft, and the bottom edge of the iPhone, where the microphone is, touching the case next to the crown. If it still can&#x27;t hear it, use atomic time checks: they work with any watch that has a seconds hand, in any room.</p></section>
+<section class="qa" id="q7"><h3>Does Tickrate need an internet connection?</h3><p>Only for atomic time. Checks and calibrating the iPhone read the time from public time servers: Apple&#x27;s first, Cloudflare&#x27;s or Google&#x27;s if Apple&#x27;s doesn&#x27;t answer. Listening works offline, and without a connection a check uses the iPhone&#x27;s own clock and says so.</p></section>
+<section class="qa" id="q8"><h3>Does Tickrate record or upload sound?</h3><p>No. The microphone is used only while you listen to a watch or calibrate the iPhone, and the sound is analysed on the iPhone and never recorded, saved or uploaded. There is no account; your watches and results stay on your iPhone, and you can export them as CSV or a backup file.</p></section>
+<section class="qa" id="q9"><h3>How does Tickrate compare with a timegrapher?</h3><p>A timegrapher measures more: rate, amplitude and beat error in each position, with a contact microphone; Tickrate measures only the rate. What Tickrate adds is the long view: atomic time checks over days give the average rate as you actually wear the watch. If you regulate movements or need amplitude and beat error, use a timegrapher.</p></section>
+<section class="qa" id="q10"><h3>Which watches does Tickrate work with?</h3><p>Atomic time checks work with any watch that has a seconds hand, mechanical or quartz. Listening works with mechanical watches at standard beat rates from 12,000 to 43,200 beats per hour, such as 21,600 and 28,800; Tickrate can detect the beat rate itself. Quartz watches can&#x27;t be measured by listening.</p></section>
+<section class="qa" id="q11"><h3>What does Tickrate cost?</h3><p>One watch is free, with unlimited atomic time checks, listens and iPhone calibration; its history and chart show the last 30 days, and older entries are kept. Tickrate Unlimited is a one-time purchase (US$7.99 in the United States; prices vary by country), with no subscription and no account. It adds every watch, the full history, export and import, and calibration with a quartz watch, and it works with Family Sharing.</p></section>
 </section>
-
-<section id="calibrate">
-<h2>Calibrate this iPhone</h2>
-<p>Each iPhone’s sound clock runs a little fast or slow — on one iPhone we measured 2 seconds a day — and that shifts every listening result. Calibrating once removes it.</p>
-<ol>
-<li>At bedtime, plug in your iPhone.</li>
-<li>Open Settings › Calibrate this iPhone and leave it. The screen stays on, dimmed.</li>
-<li>It stops by itself when the result is accurate enough, usually within an hour.</li>
-</ol>
-<p>If you use your phone in between, nothing is lost: Tickrate keeps what it has collected and continues the next time the page is open. It needs an internet connection, and the page must stay open — iPhone doesn’t let apps read atomic time in the background. Atomic time checks don’t need calibration.</p>
-<p>A quartz watch or clock whose second hand jumps once a second gives a quick alternative (Settings › Calibrate with a quartz watch).</p>
+<section id="sources"><h2>Sources</h2>
+<ul class="sources">
+<li>COSC chronometer test: average daily rate −4 to +6 seconds. <a href="https://www.cosc.swiss/certified-chronometer">cosc.swiss</a></li>
+<li>Seiko NH35 accuracy specification, −20 to +40 seconds a day (maker&#x27;s specification as reproduced by Caliber Corner). <a href="https://calibercorner.com/seiko-caliber-nh35a">calibercorner.com</a></li>
+<li>Tickrate&#x27;s figures (±0.4 s/day for checks a day apart, ±0.5 to ±1 s/day for a clean listen after calibration, ±3 s/day before, about 2 s/day for one iPhone&#x27;s audio clock): our own tests on watch recordings, synthetic signals and an iPhone 17 Pro Max, November 2026.</li>
+</ul>
 </section>
-
-<section id="purchase">
-<h2>Free and Tickrate Unlimited</h2>
-<p>The free version keeps one watch, fully usable: atomic time checks, listening and calibration, with the last 30 days of history on screen. <b>Tickrate Unlimited</b> is a one-time purchase — no subscription, no account — that adds every watch in your collection, your full history, CSV and backup export and import, and quartz-watch calibration. It is shared with your family through Family Sharing.</p>
-<p>Bought it on another iPhone? Open Settings › Restore Purchase.</p>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p>Questions, ideas or a problem: write to <a href="mailto:xufei547@gmail.com?subject=Tickrate">xufei547@gmail.com</a>. It helps to say your iPhone model and, for listening, the watch and its movement if you know it.</p>
-</section>
-<footer>Tickrate · <a href="privacy/">Privacy Policy</a></footer>
+<footer><p>Also in: <a href="de/" hreflang="de" lang="de">Deutsch</a> · <a href="fr/" hreflang="fr" lang="fr">Français</a> · <a href="es/" hreflang="es" lang="es">Español</a></p><p>Tickrate · made by an independent developer · <a href="support/">Support</a> · <a href="privacy/">Privacy</a></p></footer>
 </main>
 </body>
 </html>
