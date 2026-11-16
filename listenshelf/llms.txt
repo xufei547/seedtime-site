@@ -1,0 +1,26 @@
+# Listenshelf
+
+> Listenshelf is an audiobook player for iPhone and iPad that plays audiobook files you bring yourself: M4B, MP3, M4A and AAC. Import a file or a whole folder from the Files app and listen offline, with chapters, speed from 0.5× to 3× without changing pitch, a sleep timer, bookmarks with notes, and your place and speed remembered for every book. The first 2 books are free, with every feature; Listenshelf Unlimited, a one-time purchase (US$5.99 in the United States), unlocks as many books as you like. No subscription, no account.
+
+Listenshelf cannot play DRM-protected audiobooks, such as those from Audible or Apple Books. It does not sell, stream or download audiobooks. There is no CarPlay app and no Apple Watch app, and listening positions are not synced between devices. It collects no data and works offline. iPhone and iPad, iOS 17 or later; English and German. Coming soon to the App Store (https://apps.apple.com/app/id6835356555).
+
+## Pages
+
+- [Listenshelf, English](https://xufei547.github.io/seedtime-site/listenshelf/): what it is, how it works, which audiobooks it plays, limits, questions and answers
+- [Listenshelf, Deutsch](https://xufei547.github.io/seedtime-site/listenshelf/de/): the same page in Deutsch
+- [Support](https://xufei547.github.io/seedtime-site/listenshelf/support/): importing, file order, chapters, what is free, restoring a purchase, contact
+- [Privacy](https://xufei547.github.io/seedtime-site/listenshelf/privacy/): no account, no data collected
+
+## Questions answered on the page
+
+- How do I play M4B audiobooks on my iPhone?
+- Is there an audiobook player for iPhone without a subscription?
+- How do I listen to LibriVox audiobooks on my iPhone?
+- Can Listenshelf play my Audible or Apple Books audiobooks?
+- Which audio formats does Listenshelf support?
+- How do I turn a folder of MP3 files into one audiobook?
+- Will I lose my place in a book?
+- How is Listenshelf different from subscription audiobook players?
+- Does Listenshelf need an account or an internet connection?
+- Does Listenshelf work on iPad, CarPlay or Apple Watch?
+- What does Listenshelf cost?
